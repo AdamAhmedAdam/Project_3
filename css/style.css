@@ -50,17 +50,7 @@ div.special-head {
     position: relative;
     z-index: 100;
 }
-div.special-head h1::before {
-    content: "";
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--main-color);
-    position: absolute;
-    left: -40px;
-    top: 50%;
-    margin-top: -6px;
-}
+div.special-head h1::before,
 div.special-head h1::after {
     content: "";
     width: 12px;
@@ -68,25 +58,41 @@ div.special-head h1::after {
     border-radius: 50%;
     background-color: var(--main-color);
     position: absolute;
-    right: -40px;
     top: 50%;
     margin-top: -6px;
+}
+div.special-head h1::after {
+    right: -40px;
+}
+div.special-head h1::before {
+    left: -40px;
 }
 div.special-head h1:hover::before {
     animation: position-left .3s both linear,  width-height .3s .3s both;
 }
 div.special-head h1:hover::after {
-    animation: position-right .3s both linear, width-height .3s .3s both;
+    animation: position-right .3s both linear,  width-height .3s .3s both;
 }
 div.special-head h1:hover {
     animation: color .3s .6s both;
 }
 div.special-head h1 {
-    padding: 10px 20px;
     border: 2px solid #000;
     position: relative;
     padding: 10px 30px;
     text-transform: uppercase;
+}
+@media (max-width: 767px) {
+    div.special-head h1 {
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+    div.special-head h1::after {
+        right: -30px;
+    }
+    div.special-head h1::before {
+        left: -30px;
+    }
 }
 @keyframes position-left {
     to {
