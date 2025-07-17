@@ -1011,6 +1011,8 @@ header .mega-menu ul li a i {
 }
 .events .events-content .subscribe {
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 .events .events-content .info {
     text-align: center;
@@ -1024,7 +1026,6 @@ header .mega-menu ul li a i {
     display: flex;
     justify-content: center;
     gap: 10px;
-
 }
 .events .events-content .info .cards .time {
     border: 1px solid #d4d4d4;
